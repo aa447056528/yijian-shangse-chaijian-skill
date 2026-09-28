@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "skill_version": "2.10.3",
+  "scope": {
+    "mode": "method_validation",
+    "target_part_ids": [
+      "p01"
+    ],
+    "neighbor_part_ids": [
+      "p02"
+    ],
+    "excluded_regions": [],
+    "purpose": "验证目标件与邻件的配对接口；使用前替换为本次实际范围"
+  },
+  "units": {
+    "working": "mm",
+    "source_to_mm": null
+  },
+  "fabrication": {
+    "process": "FDM",
+    "target_height_mm": 200,
+    "parameter_sources": {
+      "process": "skill_default",
+      "target_height_mm": "skill_default"
+    },
+    "nozzle_diameter_mm": null,
+    "layer_height_mm": null,
+    "material": null,
+    "printer_model": null
+  },
+  "tools": {
+    "blender_version": null
+  },
+  "stage": "DRAFT",
+  "artifacts": [
+    {
+      "id": "source",
+      "path": "source/model.stl",
+      "sha256": null,
+      "depends_on": []
+    },
+    {
+      "id": "parameters",
+      "path": "work/parameters.json",
+      "sha256": null,
+      "depends_on": []
+    },
+    {
+      "id": "working",
+      "path": "work/working.blend",
+      "sha256": null,
+      "depends_on": [
+        "source",
+        "parameters"
+      ]
+    },
+    {
+      "id": "regions",
+      "path": "work/regions.json",
+      "sha256": null,
+      "depends_on": [
+        "working"
+      ]
+    },
+    {
+      "id": "interfaces",
+      "path": "work/interfaces.json",
+      "sha256": null,
+      "depends_on": [
+        "working",
+        "regions",
+        "parameters"
+      ]
+    },
+    {
+      "id": "p01_solid",
+      "path": "exports/p01.stl",
+      "sha256": null,
+      "depends_on": [
+        "working",
+        "regions",
+        "interfaces"
+      ]
+    },
+    {
+      "id": "p02_solid",
+      "path": "exports/p02.stl",
+      "sha256": null,
+      "depends_on": [
+        "working",
+        "regions",
+        "interfaces"
+      ]
+    }
+  ],
+  "required_checks": [
+    "working_review",
+    "regions_structure",
+    "regions_semantics",
+    "shared_boundaries",
+    "interface_plan",
+    "solid_topology",
+    "self_intersection",
+    "surface_preservation",
+    "thickness",
+    "pair_fit",
+    "assembly_path",
+    "bed_contact",
+    "export_readback"
+  ],
+  "checks": [
+    {"id": "working_review", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"source": null, "working": null}, "evidence": [], "invalidated_by": []},
+    {"id": "regions_structure", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"working": null, "regions": null}, "evidence": [], "invalidated_by": []},
+    {"id": "regions_semantics", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"working": null, "regions": null}, "evidence": [], "invalidated_by": []},
+    {"id": "shared_boundaries", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"working": null, "regions": null, "interfaces": null}, "evidence": [], "invalidated_by": []},
+    {"id": "interface_plan", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"interfaces": null}, "evidence": [], "invalidated_by": []},
+    {"id": "solid_topology", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"p01_solid": null, "p02_solid": null}, "evidence": [], "invalidated_by": []},
+    {"id": "self_intersection", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"p01_solid": null, "p02_solid": null}, "evidence": [], "invalidated_by": []},
+    {"id": "surface_preservation", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"working": null, "regions": null, "p01_solid": null, "p02_solid": null}, "evidence": [], "invalidated_by": []},
+    {"id": "thickness", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"p01_solid": null, "p02_solid": null}, "evidence": [], "invalidated_by": []},
+    {"id": "pair_fit", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"interfaces": null, "p01_solid": null, "p02_solid": null}, "evidence": [], "invalidated_by": []},
+    {"id": "assembly_path", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"interfaces": null, "p01_solid": null, "p02_solid": null}, "evidence": [], "invalidated_by": []},
+    {"id": "bed_contact", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"p01_solid": null, "p02_solid": null}, "evidence": [], "invalidated_by": []},
+    {"id": "export_readback", "status": "NOT_RUN", "scope_part_ids": ["p01", "p02"], "inputs": {"p01_solid": null, "p02_solid": null}, "evidence": [], "invalidated_by": []}
+  ],
+  "exports": [{"file": "p01.stl", "part_id": "p01"}, {"file": "p02.stl", "part_id": "p02"}]
+}
