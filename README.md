@@ -69,7 +69,11 @@ python3 tests/test_stl_exports.py --blender /path/to/blender
 
 后续版本更新和使用内容，可在小红书关注 **张大山l**（小红书号：**943215445**）。扫描下方原始名片中的二维码也可以找到账号。
 
-<img src="assets/xiaohongshu-qr.jpg" alt="张大山l 的小红书名片和二维码" width="360">
+也欢迎微信扫码加入 **AI研讨会**，一起交流 AI 使用与 skill 实践。群二维码图片标注：**2026 年 10 月 7 日前有效**；过期后请通过小红书联系获取新二维码。
+
+| 小红书：张大山l | 微信群：AI研讨会 |
+| :---: | :---: |
+| <img src="assets/xiaohongshu-qr.jpg" alt="张大山l 的小红书名片和二维码" width="320"> | <img src="assets/ai-seminar-wechat-qr.jpg" alt="AI研讨会微信群二维码，2026年10月7日前有效" width="320"> |
 
 ## 参与贡献
 
